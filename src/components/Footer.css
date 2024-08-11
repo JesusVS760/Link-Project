@@ -2,25 +2,33 @@
   color: #fff;
   background: hsl(260, 8%, 14%);
   padding: 35px;
-}
-.footer-hero img {
-  background-color: white;
-}
-.footer-content {
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.footer-hero img {
+  background-color: white;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.footer-content {
+  display: flex;
   justify-content: center;
   gap: 100px;
 }
 .footer-links {
   display: flex;
   align-items: center;
+  margin-top: -25px;
   justify-content: center;
   gap: 50px;
 }
 a {
   text-decoration: none;
   font-size: 0.8rem;
+  color: hsl(257, 7%, 63%);
 }
 
 .footer-link-features,
@@ -34,4 +42,12 @@ a {
 .footer-social {
   display: flex;
   gap: 25px;
+}
+.footer-link-features p,
+.footer-link-resources p,
+.footer-link-company p {
+  margin-bottom: 10px;
+}
+.footer-link-company {
+  margin-top: 20px;
 }

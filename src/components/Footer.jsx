@@ -34,7 +34,7 @@ const Footer = () => {
             <a href="/">Contact</a>
           </div>
         </div>
-        <div className="footer-social">
+        <div className="">
           <div className="footer-social-container">
             <a href="/">
               {" "}

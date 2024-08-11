@@ -22,10 +22,12 @@ nav a {
 nav img {
   margin-right: 35px;
 }
+
 .nav-buttons button {
-  padding: 8px 15px;
+  padding: 10px 15px;
   outline: none;
   border: none;
+  font-size: 0.9rem;
   font-weight: 500;
   border-radius: 45px;
   cursor: pointer;
