@@ -1,0 +1,28 @@
+.features-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background-color: hsl(257, 27%, 26%);
+  background-image: url(../assets/images/bg-boost-desktop.svg);
+  width: 100%;
+  color: #fff;
+}
+.features-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.features-content button {
+  padding: 15px 35px;
+  border-radius: 35px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  background: hsl(180, 66%, 49%);
+  border: none;
+  outline: none;
+  margin-top: 15px;
+  cursor: pointer;
+}

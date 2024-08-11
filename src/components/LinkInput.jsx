@@ -6,7 +6,7 @@ const LinkInput = () => {
     <div className="linkInput-wrapper">
       <div className="linkInput-container">
         <div className="link-content">
-          <input type="text" placeholder="Shorten a link here..." />
+          <input type="url" placeholder="Shorten a link here..." />
           <button className="shorten-link-button">Shorten it!</button>
         </div>
       </div>
