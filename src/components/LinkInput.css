@@ -45,10 +45,13 @@
 .link-content-red input {
   padding: 18px;
   border-radius: 10px;
-  border: 1px solid red;
+  border: 3px solid red;
   outline: none;
   width: 80%;
   font-size: 0.9rem;
+}
+.add-link {
+  color: red;
 }
 
 .linkInput-wrapper {
@@ -79,7 +82,4 @@
   font-weight: 700;
   font-size: 0.9rem;
   cursor: pointer;
-}
-.add-link {
-  color: red;
 }

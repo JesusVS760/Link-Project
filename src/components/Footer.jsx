@@ -34,26 +34,26 @@ const Footer = () => {
             <a href="/">Contact</a>
           </div>
         </div>
-        <div className="">
-          <div className="footer-social-container">
+        <div className="footer-social-container">
+          <div className="footer-social">
             <a href="/">
               {" "}
               <img src={facebook} alt="" />
             </a>
           </div>
-          <div className="footer-social-container">
+          <div className="footer-social">
             <a href="/">
               {" "}
               <img src={twitter} alt="" />
             </a>
           </div>
-          <div className="footer-social-container">
+          <div className="footer-social">
             <a href="/">
               {" "}
               <img src={pinterest} alt="" />
             </a>
           </div>
-          <div className="footer-social-container">
+          <div className="footer-social">
             <a href="/">
               {" "}
               <img src={instagram} alt="" />

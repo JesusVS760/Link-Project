@@ -39,10 +39,7 @@ a {
   flex-direction: column;
   gap: 2px;
 }
-.footer-social {
-  display: flex;
-  gap: 25px;
-}
+
 .footer-link-features p,
 .footer-link-resources p,
 .footer-link-company p {
@@ -50,4 +47,8 @@ a {
 }
 .footer-link-company {
   margin-top: 20px;
+}
+.footer-social-container {
+  display: flex;
+  gap: 15px;
 }
