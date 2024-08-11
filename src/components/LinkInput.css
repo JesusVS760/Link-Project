@@ -1,0 +1,43 @@
+.linkInput-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  padding: 35px;
+  width: 70%;
+  background-color: hsl(257, 27%, 26%);
+  background-image: url(../assets/images/bg-shorten-desktop.svg);
+  border-radius: 10px;
+}
+.link-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* max-width: 500px; */
+  gap: 15px;
+}
+.link-content input {
+  padding: 18px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  width: 80%;
+  font-size: 0.9rem;
+}
+.linkInput-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.link-content button {
+  padding: 18px 25px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: hsl(180, 66%, 49%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
