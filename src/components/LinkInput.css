@@ -15,7 +15,14 @@
   justify-content: center;
   width: 100%;
   /* max-width: 500px; */
-  gap: 15px;
+  /* gap: 15px; */
+}
+.link-content-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  margin-right: -20px;
+  font-size: 0.9rem;
 }
 .link-content input {
   padding: 18px;
@@ -37,7 +44,11 @@
   outline: none;
   background: hsl(180, 66%, 49%);
   color: #fff;
+  width: 20%;
   font-weight: 700;
   font-size: 0.9rem;
   cursor: pointer;
+}
+.add-link {
+  color: red;
 }
