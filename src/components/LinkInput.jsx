@@ -18,7 +18,7 @@ const LinkInput = () => {
   return (
     <div className="linkInput-wrapper">
       <div className="linkInput-container">
-        <div className="link-content">
+        <div className={!isEmpty ? "link-content-red" : "link-content"}>
           <div className="link-content-input">
             <input
               type="url"
