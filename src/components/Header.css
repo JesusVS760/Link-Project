@@ -5,7 +5,7 @@
   padding: 0px 50px 0px 50px;
 }
 .header-hero img {
-  width: 600px;
+  max-width: 600px;
 }
 .header-content {
   max-width: 500px;

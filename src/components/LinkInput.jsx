@@ -3,17 +3,35 @@ import "./LinkInput.css";
 
 const LinkInput = () => {
   const [isEmpty, setIsEmpty] = useState(true);
-
-  useEffect(() => {}, []);
+  const [longURL, setLongURL] = useState("");
+  const [shortURL, setShortURL] = useState("default");
 
   function emptyError(value) {
     if (value == "") {
       setIsEmpty(false);
     } else if (value != "") {
       setIsEmpty(true);
+      setLongURL(value);
+      console.log(longURL);
       console.log("re-render");
     }
   }
+  useEffect(() => {
+    const value = longURL;
+    const fetchUrl = async () => {
+      try {
+        const response = await fetch(
+          `https://ulvis.net/API/write/get?${value}`
+        );
+        const data = await response.json();
+        setShortURL(data);
+      } catch (e) {
+        console.log("caught");
+      }
+      fetchUrl();
+      console.log(shortURL);
+    };
+  }, []);
 
   return (
     <div className="linkInput-wrapper">
@@ -28,6 +46,7 @@ const LinkInput = () => {
             {!isEmpty ? <p className="add-link">Please add a link!</p> : ""}
           </div>
           <button className="shorten-link-button">Shorten it!</button>
+          <p>{shortURL}</p>
         </div>
       </div>
     </div>

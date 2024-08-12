@@ -52,6 +52,7 @@
 }
 .add-link {
   color: red;
+  font-style: italic;
 }
 
 .linkInput-wrapper {
