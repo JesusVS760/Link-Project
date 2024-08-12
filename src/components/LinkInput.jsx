@@ -4,7 +4,9 @@ import "./LinkInput.css";
 const LinkInput = () => {
   const [isEmpty, setIsEmpty] = useState(true);
   const [longURL, setLongURL] = useState("");
-  const [shortURL, setShortURL] = useState("default");
+  const [shortURL, setShortURL] = useState("");
+
+  const ACCESS_TOKEN = "1b2b8af2aa18dc4cb9c69dbafc440cda2f95b470";
 
   function emptyError(value) {
     if (value == "") {
@@ -17,21 +19,35 @@ const LinkInput = () => {
     }
   }
   useEffect(() => {
-    const value = longURL;
-    const fetchUrl = async () => {
-      try {
-        const response = await fetch(
-          `https://ulvis.net/API/write/get?${value}`
-        );
-        const data = await response.json();
-        setShortURL(data);
-      } catch (e) {
-        console.log("caught");
-      }
+    if (longURL) {
+      const fetchUrl = async () => {
+        try {
+          const response = await fetch("https://api-ssl.bitly.com/v4/shorten", {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${ACCESS_TOKEN}`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              long_url: longURL,
+              domain: "bit.ly",
+            }),
+          });
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          const data = await response.json();
+          console.log(data.link); // property of data, aka dot notation to refer to actual link
+          setShortURL(data.link);
+        } catch (e) {
+          console.log("caught", e);
+        }
+      };
+
       fetchUrl();
-      console.log(shortURL);
-    };
-  }, []);
+    }
+  }, [longURL]);
 
   return (
     <div className="linkInput-wrapper">
@@ -45,8 +61,13 @@ const LinkInput = () => {
             />
             {!isEmpty ? <p className="add-link">Please add a link!</p> : ""}
           </div>
-          <button className="shorten-link-button">Shorten it!</button>
-          <p>{shortURL}</p>
+          <button
+            onClick={() => setLongURL(longURL)}
+            className="shorten-link-button"
+          >
+            Shorten it!
+          </button>
+          <a href={shortURL}>{shortURL}</a>
         </div>
       </div>
     </div>
