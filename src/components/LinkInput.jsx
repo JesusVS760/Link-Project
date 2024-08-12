@@ -18,35 +18,36 @@ const LinkInput = () => {
       console.log("re-render");
     }
   }
+  // KEY NOTES FOR NEXT TIME USE:
+  // Wrap in try catch block just because we may not able to fetch properly
   useEffect(() => {
-    if (longURL) {
-      const fetchUrl = async () => {
-        try {
-          const response = await fetch("https://api-ssl.bitly.com/v4/shorten", {
-            method: "POST",
-            headers: {
-              Authorization: `Bearer ${ACCESS_TOKEN}`,
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              long_url: longURL,
-              domain: "bit.ly",
-            }),
-          });
+    const fetchUrl = async () => {
+      try {
+        const response = await fetch("https://api-ssl.bitly.com/v4/shorten", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${ACCESS_TOKEN}`, // creds from server to client
+            "Content-Type": "application/json", // media type
+          },
+          body: JSON.stringify({
+            // type
+            long_url: longURL,
+            domain: "bit.ly",
+          }),
+        });
 
-          if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          }
-          const data = await response.json();
-          console.log(data.link); // property of data, aka dot notation to refer to actual link
-          setShortURL(data.link);
-        } catch (e) {
-          console.log("caught", e);
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
         }
-      };
+        const data = await response.json(); // conversion to object aka useable data
+        console.log(data.link); // property of data, aka dot notation to refer to actual link
+        setShortURL(data.link);
+      } catch (e) {
+        console.log("caught", e);
+      }
+    };
 
-      fetchUrl();
-    }
+    fetchUrl();
   }, [longURL]);
 
   return (
@@ -67,9 +68,22 @@ const LinkInput = () => {
           >
             Shorten it!
           </button>
-          <a href={shortURL}>{shortURL}</a>
+          {/*TESTING <a href={shortURL}>{shortURL}</a> */}
         </div>
       </div>
+      {shortURL && (
+        <div className="result-content">
+          <div className="original-link">{longURL}</div>
+          <div className="shortened-link">
+            <div className="short-url-link">
+              <a href={shortURL}> {shortURL}</a>
+            </div>
+            <div className="copy-button">
+              <button>Copy</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
