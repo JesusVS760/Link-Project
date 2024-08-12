@@ -5,6 +5,7 @@ const LinkInput = () => {
   const [isEmpty, setIsEmpty] = useState(true);
   const [longURL, setLongURL] = useState("");
   const [shortURL, setShortURL] = useState("");
+  const [isClicked, setIsClicked] = useState(false);
 
   const ACCESS_TOKEN = "1b2b8af2aa18dc4cb9c69dbafc440cda2f95b470";
 
@@ -63,7 +64,9 @@ const LinkInput = () => {
             {!isEmpty ? <p className="add-link">Please add a link!</p> : ""}
           </div>
           <button
-            onClick={() => setLongURL(longURL)}
+            onClick={() => {
+              setIsClicked(true);
+            }}
             className="shorten-link-button"
           >
             Shorten it!
@@ -71,7 +74,7 @@ const LinkInput = () => {
           {/*TESTING <a href={shortURL}>{shortURL}</a> */}
         </div>
       </div>
-      {shortURL && (
+      {shortURL && isClicked && (
         <div className="result-content">
           <div className="original-link">{longURL}</div>
           <div className="shortened-link">
