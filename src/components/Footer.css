@@ -52,3 +52,31 @@ a {
   display: flex;
   gap: 15px;
 }
+@media screen and (max-width: 767px) {
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-hero,
+  .footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-links {
+    flex-direction: column;
+    margin-bottom: -50px;
+  }
+  .footer-link-features,
+  .footer-link-resources,
+  .footer-link-company {
+    text-align: center;
+    margin: 0;
+  }
+  .footer-social-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+}

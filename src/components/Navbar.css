@@ -36,3 +36,12 @@ nav img {
   background: hsl(180, 66%, 49%);
   color: #fff;
 }
+@media screen and (max-width: 767px) {
+  .navbar {
+    padding: 25px 50px 25px 50px;
+  }
+  nav a,
+  .nav-buttons button {
+    display: none;
+  }
+}

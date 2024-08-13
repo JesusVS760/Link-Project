@@ -48,3 +48,17 @@
 .card-3 {
   margin-top: 100px;
 }
+@media screen and (max-width: 767px) {
+  .stats-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .stat-card img {
+    margin-left: 105px;
+  }
+  .card-3 {
+    margin-top: 50px;
+  }
+}

@@ -25,3 +25,22 @@
   cursor: pointer;
   margin-top: 25px;
 }
+
+@media screen and (max-width: 767px) {
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .header-content p,
+  h1 {
+    text-align: center;
+  }
+}

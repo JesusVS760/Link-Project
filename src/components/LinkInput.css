@@ -138,3 +138,27 @@
   font-size: 1rem;
   color: hsl(180, 66%, 49%);
 }
+
+@media screen and (max-width: 767px) {
+  .link-content,
+  .link-content-red {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .link-content-input,
+  .shorten-link-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+  }
+  .link-content button {
+    width: 80%;
+    margin-top: 15px;
+  }
+  .linkInput-container {
+    width: 90%;
+  }
+}
