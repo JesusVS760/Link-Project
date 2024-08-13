@@ -74,10 +74,10 @@ nav img {
   .navbar-active nav {
     position: fixed;
     top: 5rem;
-    right: 0%;
+    left: 10%;
     flex-direction: column;
     background-color: hsl(257, 27%, 26%);
-    width: 100%;
+    width: 80%;
     border-radius: 10px;
     text-align: center;
     transition: 0.3s;
