@@ -7,13 +7,14 @@ const LinkInput = () => {
   const [longURL, setLongURL] = useState("");
   const [shortURL, setShortURL] = useState("");
   const [isClicked, setIsClicked] = useState(false);
-
+  const [isCopyClicked, IsCopyClicked] = useState(false);
   const ACCESS_TOKEN = "1b2b8af2aa18dc4cb9c69dbafc440cda2f95b470";
 
   function emptyError(value) {
     if (value == "") {
       setIsEmpty(false);
       setIsClicked(false);
+      IsCopyClicked(false);
     } else if (value != "") {
       setIsEmpty(true);
       setLongURL(value);
@@ -55,6 +56,7 @@ const LinkInput = () => {
 
   const handleCopy = () => {
     useCopy(shortURL);
+    IsCopyClicked(true);
   };
 
   return (
@@ -87,8 +89,12 @@ const LinkInput = () => {
             <div className="short-url-link">
               <a href={shortURL}> {shortURL}</a>
             </div>
-            <div className="copy-button">
-              <button onClick={handleCopy}>Copy</button>
+            <div
+              className={isCopyClicked ? "copy-button-clicked" : "copy-button"}
+            >
+              <button onClick={handleCopy}>
+                {isCopyClicked ? "Copied!" : "Copy"}
+              </button>
             </div>
           </div>
         </div>
