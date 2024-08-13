@@ -4,10 +4,14 @@ import shortly from "../assets/images/logo.svg";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [isSmall, setIsSmall] = useState(true); // placeholder to work on
+  const isSmallScreen = window.matchMedia(767).matches;
 
   return (
     <div className="navbar-container">
-      <div className={showMenu ? "navbar-active" : "navbar"}>
+      <div
+        className={isSmall ? (showMenu ? "navbar-active" : "navbar") : "navbar"}
+      >
         <div className="hero-image">
           <img src={shortly} alt="" />
         </div>
