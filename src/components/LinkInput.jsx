@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./LinkInput.css";
+import useCopy from "../hooks/useCopy";
 
 const LinkInput = () => {
   const [isEmpty, setIsEmpty] = useState(true);
@@ -12,6 +13,7 @@ const LinkInput = () => {
   function emptyError(value) {
     if (value == "") {
       setIsEmpty(false);
+      setIsClicked(false);
     } else if (value != "") {
       setIsEmpty(true);
       setLongURL(value);
@@ -51,6 +53,10 @@ const LinkInput = () => {
     fetchUrl();
   }, [longURL]);
 
+  const handleCopy = () => {
+    useCopy(shortURL);
+  };
+
   return (
     <div className="linkInput-wrapper">
       <div className="linkInput-container">
@@ -82,7 +88,7 @@ const LinkInput = () => {
               <a href={shortURL}> {shortURL}</a>
             </div>
             <div className="copy-button">
-              <button>Copy</button>
+              <button onClick={handleCopy}>Copy</button>
             </div>
           </div>
         </div>
