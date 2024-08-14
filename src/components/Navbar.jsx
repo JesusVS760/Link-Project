@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import shortly from "../assets/images/logo.svg";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 const Navbar = () => {
+  const windowWidth = useMediaQuery();
+  const isSmall = windowWidth <= 767;
+
   const [showMenu, setShowMenu] = useState(false);
-  const [isSmall, setIsSmall] = useState(true); // placeholder to work on
-  const isSmallScreen = window.matchMedia(767).matches;
+  // const [isSmall, setIsSmall] = useState(true); // placeholder to work on
+  // const isSmallScreen = window.matchMedia(767).matches;
 
   return (
     <div className="navbar-container">
@@ -26,11 +30,21 @@ const Navbar = () => {
           <a className="item" href="/">
             Resources
           </a>
+
+          <div
+            className={
+              isSmall
+                ? showMenu
+                  ? "nav-buttons-active"
+                  : "nav-buttons"
+                : "nav-buttons"
+            }
+          >
+            <hr />
+            <button>Login</button>
+            <button className="sign-up-button">Sign Up</button>
+          </div>
         </nav>
-        <div className="nav-buttons">
-          <button>Login</button>
-          <button className="sign-up-button">Sign Up</button>
-        </div>
       </div>
       <div onClick={() => setShowMenu(!showMenu)} className="hamburger">
         <span className="bar"></span>

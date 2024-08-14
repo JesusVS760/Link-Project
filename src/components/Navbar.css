@@ -39,7 +39,13 @@ nav img {
 .hamburger {
   display: none;
 }
-.mobile-options {
+.mobile-options,
+.navbar-active,
+.nav-buttons-active {
+  display: none;
+}
+
+hr {
   display: none;
 }
 @media screen and (max-width: 767px) {
@@ -49,6 +55,27 @@ nav img {
   .navbar nav a,
   .nav-buttons button {
     display: none;
+  }
+  .nav-buttons-active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .nav-buttons-active button {
+    display: block;
+    width: 80%;
+    margin-bottom: 25px;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .nav-buttons-active button:nth-child(2) {
+    background: transparent;
+    color: #fff;
   }
   .hamburger {
     display: block;
@@ -94,5 +121,11 @@ nav img {
   }
   .mobile-options {
     display: flex;
+  }
+  hr {
+    display: block;
+    width: 90%;
+    color: hsl(0, 0%, 75%);
+    margin-bottom: 50px;
   }
 }
